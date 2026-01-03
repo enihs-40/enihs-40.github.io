@@ -8,7 +8,6 @@
   <style>
     :root{
       --bg: #0b1220;
-      --card: #0f1a30;
       --text: #e9eefc;
       --muted: #b7c2e1;
       --border: rgba(255,255,255,.12);
@@ -28,6 +27,8 @@
         var(--bg);
       color: var(--text);
     }
+
+    a{ color: inherit; }
 
     .wrap{
       max-width: var(--max);
@@ -116,16 +117,16 @@
 
     /* SECTIONS */
     .section{
-      margin-top: 32px;
+      margin-top: 36px;
     }
 
     .sectionHead{
       display: flex;
-      align-items: baseline;
       justify-content: space-between;
+      align-items: baseline;
       gap: 12px;
       flex-wrap: wrap;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
 
     .section h2{
@@ -136,7 +137,7 @@
     .sectionNote{
       margin: 0;
       font-size: 13px;
-      color: rgba(233,238,252,.70);
+      color: rgba(233,238,252,.7);
     }
 
     .grid{
@@ -145,17 +146,27 @@
       gap: 16px;
     }
 
+    /* CLICKABLE CARD */
+    .cardLink{
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
     .card{
       border: 1px solid var(--border);
       background: rgba(255,255,255,.05);
       border-radius: var(--radius);
       padding: 18px;
       box-shadow: 0 8px 24px rgba(0,0,0,.25);
-      transition: transform .15s ease;
+      transition: transform .15s ease, background .15s ease;
+      cursor: pointer;
+      height: 100%;
     }
 
     .card:hover{
-      transform: translateY(-3px);
+      transform: translateY(-4px);
+      background: rgba(255,255,255,.08);
     }
 
     .card h3{
@@ -169,14 +180,8 @@
       font-size: 14px;
     }
 
-    .smalllink{
-      font-size: 14px;
-      font-weight: 600;
-      text-decoration: none;
-    }
-
     .footer{
-      margin-top: 40px;
+      margin-top: 44px;
       text-align: center;
       font-size: 13px;
       color: rgba(233,238,252,.7);
@@ -216,41 +221,43 @@
     <section class="section">
       <div class="sectionHead">
         <h2>SolidWorks Projects</h2>
-        <p class="sectionNote">CAD modeling, assemblies, drawings, manufacturability</p>
+        <p class="sectionNote">CAD modeling, assemblies, drawings</p>
       </div>
 
       <div class="grid">
-        <div class="card">
-          <h3>Knee Scooter — Capstone Design</h3>
-          <p>Capstone design project: concept → CAD → assembly layout and drawings for a knee scooter.</p>
-          <div class="skills">
-            <span class="tag">SolidWorks</span>
-            <span class="tag">Assemblies</span>
-            <span class="tag">Drawings</span>
+        <a href="projects/knee-scooter-design.html" class="cardLink">
+          <div class="card">
+            <h3>Knee Scooter — Capstone Design</h3>
+            <p>Capstone design project: concept → CAD → assembly layout and drawings.</p>
+            <div class="skills">
+              <span class="tag">SolidWorks</span>
+              <span class="tag">Assemblies</span>
+              <span class="tag">Drawings</span>
+            </div>
           </div>
-          <a class="smalllink" href="projects/knee-scooter-design.html">View details →</a>
-        </div>
+        </a>
 
-        <div class="card">
-          <h3>W257N Project (Victaulic)</h3>
-          <p>Mechanical design support: part/assembly updates and configuration work.</p>
-          <div class="skills">
-            <span class="tag">SolidWorks</span>
-            <span class="tag">Design</span>
-            <span class="tag">DFM</span>
+        <a href="projects/w257n.html" class="cardLink">
+          <div class="card">
+            <h3>W257N Project (Victaulic)</h3>
+            <p>Mechanical design support: part and assembly updates, configuration work.</p>
+            <div class="skills">
+              <span class="tag">SolidWorks</span>
+              <span class="tag">DFM</span>
+            </div>
           </div>
-          <a class="smalllink" href="projects/w257n.html">View details →</a>
-        </div>
+        </a>
 
-        <div class="card">
-          <h3>SolidWorks Side Projects</h3>
-          <p>Additional CAD practice projects: part modeling, assemblies, and clean drawings.</p>
-          <div class="skills">
-            <span class="tag">SolidWorks</span>
-            <span class="tag">CAD</span>
+        <a href="projects/solidworks-side.html" class="cardLink">
+          <div class="card">
+            <h3>SolidWorks Side Projects</h3>
+            <p>Additional CAD projects: part modeling, assemblies, clean drawings.</p>
+            <div class="skills">
+              <span class="tag">SolidWorks</span>
+              <span class="tag">CAD</span>
+            </div>
           </div>
-          <a class="smalllink" href="projects/solidworks-side.html">View details →</a>
-        </div>
+        </a>
       </div>
     </section>
 
@@ -258,30 +265,31 @@
     <section class="section">
       <div class="sectionHead">
         <h2>FEA Projects</h2>
-        <p class="sectionNote">Loads, boundary conditions, stress/deflection, safety factor</p>
+        <p class="sectionNote">Stress, deflection, safety factor</p>
       </div>
 
       <div class="grid">
-        <div class="card">
-          <h3>Knee Scooter — Structural FEA</h3>
-          <p>Structural FEA to validate frame strength and deflection under realistic load cases.</p>
-          <div class="skills">
-            <span class="tag">FEA</span>
-            <span class="tag">Stress</span>
-            <span class="tag">Deflection</span>
+        <a href="projects/knee-scooter-fea.html" class="cardLink">
+          <div class="card">
+            <h3>Knee Scooter — Structural FEA</h3>
+            <p>Structural FEA validating frame strength under realistic loading cases.</p>
+            <div class="skills">
+              <span class="tag">FEA</span>
+              <span class="tag">Stress</span>
+            </div>
           </div>
-          <a class="smalllink" href="projects/knee-scooter-fea.html">View details →</a>
-        </div>
+        </a>
 
-        <div class="card">
-          <h3>Standalone FEA Project</h3>
-          <p>Independent FEA study (model + setup + results). Add your best example here.</p>
-          <div class="skills">
-            <span class="tag">FEA</span>
-            <span class="tag">Simulation</span>
+        <a href="projects/fea-project.html" class="cardLink">
+          <div class="card">
+            <h3>Standalone FEA Project</h3>
+            <p>Independent FEA study: model, boundary conditions, results.</p>
+            <div class="skills">
+              <span class="tag">FEA</span>
+              <span class="tag">Simulation</span>
+            </div>
           </div>
-          <a class="smalllink" href="projects/fea-project.html">View details →</a>
-        </div>
+        </a>
       </div>
     </section>
 
@@ -289,29 +297,20 @@
     <section class="section">
       <div class="sectionHead">
         <h2>CFD Projects</h2>
-        <p class="sectionNote">Meshing, boundary conditions, velocity profiles, turbulence/transition</p>
+        <p class="sectionNote">Meshing, velocity profiles, transition</p>
       </div>
 
       <div class="grid">
-        <div class="card">
-          <h3>CFD Flow Study</h3>
-          <p>Studied flow behavior, Reynolds number transition, and velocity profiles.</p>
-          <div class="skills">
-            <span class="tag">ANSYS Fluent</span>
-            <span class="tag">CFD</span>
+        <a href="projects/cfd.html" class="cardLink">
+          <div class="card">
+            <h3>CFD Flow Study</h3>
+            <p>Studied flow behavior, Reynolds number transition, velocity profiles.</p>
+            <div class="skills">
+              <span class="tag">ANSYS Fluent</span>
+              <span class="tag">CFD</span>
+            </div>
           </div>
-          <a class="smalllink" href="projects/cfd.html">View details →</a>
-        </div>
-
-        <div class="card">
-          <h3>CFD Project (Add another)</h3>
-          <p>Optional: add another CFD case (pipe flow, external flow, mixing, etc.).</p>
-          <div class="skills">
-            <span class="tag">CFD</span>
-            <span class="tag">ANSYS</span>
-          </div>
-          <a class="smalllink" href="projects/cfd-2.html">View details →</a>
-        </div>
+        </a>
       </div>
     </section>
 
