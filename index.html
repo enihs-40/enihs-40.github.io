@@ -1,27 +1,9 @@
 <!doctype html>
-.avatar{
-  width: 110px;
-  height: 110px;
-  border-radius: 20px;
-  object-fit: cover;
-  border: 1px solid var(--border);
-  box-shadow: 0 10px 30px rgba(0,0,0,.25);
-}
-.heroRow{
-  display: flex;
-  gap: 18px;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
 <html lang="en">
-
-
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Shine Aung — Portfolio</title>
-  <meta name="description" content="Mechanical Engineering portfolio: CAD, FEA, CFD projects." />
 
   <style>
     :root{
@@ -29,56 +11,80 @@
       --card: #0f1a30;
       --text: #e9eefc;
       --muted: #b7c2e1;
-      --border: rgba(255,255,255,.10);
+      --border: rgba(255,255,255,.12);
       --shadow: 0 10px 30px rgba(0,0,0,.35);
       --radius: 18px;
       --max: 1040px;
     }
 
     *{ box-sizing: border-box; }
+
     body{
       margin: 0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      background: radial-gradient(1200px 600px at 20% 0%, rgba(87,121,255,.25), transparent 55%),
-                  radial-gradient(900px 500px at 80% 10%, rgba(0,212,255,.18), transparent 55%),
-                  var(--bg);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      background:
+        radial-gradient(1200px 600px at 20% 0%, rgba(87,121,255,.25), transparent 55%),
+        radial-gradient(900px 500px at 80% 10%, rgba(0,212,255,.18), transparent 55%),
+        var(--bg);
       color: var(--text);
-      line-height: 1.55;
     }
 
-    a{ color: inherit; text-decoration: none; }
-    a:hover{ text-decoration: underline; }
+    .wrap{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 28px 18px 60px;
+    }
 
-    .wrap{ max-width: var(--max); margin: 0 auto; padding: 28px 18px 60px; }
-
-    /* Header */
+    /* HERO */
     .hero{
       border: 1px solid var(--border);
-      background: rgba(255,255,255,.04);
+      background: rgba(255,255,255,.05);
       backdrop-filter: blur(10px);
       border-radius: var(--radius);
       padding: 28px;
       box-shadow: var(--shadow);
     }
 
-    .toprow{
+    .heroRow{
       display: flex;
-      gap: 18px;
-      justify-content: space-between;
-      align-items: flex-start;
+      gap: 22px;
+      align-items: center;
       flex-wrap: wrap;
+    }
+
+    .avatar{
+      width: 120px;
+      height: 120px;
+      border-radius: 22px;
+      object-fit: cover;
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 30px rgba(0,0,0,.35);
     }
 
     h1{
       margin: 0 0 6px;
-      font-size: clamp(28px, 3.2vw, 40px);
-      letter-spacing: .2px;
+      font-size: clamp(28px, 3vw, 40px);
     }
 
     .subtitle{
       margin: 0;
       color: var(--muted);
       font-size: 15px;
+    }
+
+    .skills{
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+
+    .tag{
+      font-size: 12px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.06);
     }
 
     .cta{
@@ -89,55 +95,52 @@
     }
 
     .btn{
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
       padding: 10px 14px;
       border-radius: 999px;
       border: 1px solid var(--border);
-      background: rgba(255,255,255,.06);
+      background: rgba(255,255,255,.08);
       color: var(--text);
+      text-decoration: none;
       font-weight: 600;
       font-size: 14px;
-    }
-    .btn:hover{
-      background: rgba(255,255,255,.10);
-      text-decoration: none;
     }
 
     .btn.primary{
       border-color: rgba(87,121,255,.55);
-      background: rgba(87,121,255,.20);
+      background: rgba(87,121,255,.25);
     }
 
-    /* Section */
+    .btn:hover{
+      background: rgba(255,255,255,.14);
+    }
+
+    /* PROJECTS */
     .section{
-      margin-top: 26px;
+      margin-top: 32px;
     }
 
     .section h2{
-      margin: 0 0 10px;
+      margin-bottom: 12px;
       font-size: 18px;
-      letter-spacing: .2px;
     }
 
     .grid{
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 14px;
+      gap: 16px;
     }
 
     .card{
       border: 1px solid var(--border);
-      background: rgba(255,255,255,.04);
+      background: rgba(255,255,255,.05);
       border-radius: var(--radius);
-      padding: 16px;
-      box-shadow: 0 8px 22px rgba(0,0,0,.22);
-      transition: transform .12s ease, background .12s ease;
+      padding: 18px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.25);
+      transition: transform .15s ease;
     }
+
     .card:hover{
-      transform: translateY(-2px);
-      background: rgba(255,255,255,.06);
+      transform: translateY(-3px);
     }
 
     .card h3{
@@ -151,50 +154,29 @@
       font-size: 14px;
     }
 
-    .tags{
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-bottom: 10px;
-    }
-
-    .tag{
-      font-size: 12px;
-      padding: 5px 10px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,.05);
-      color: var(--text);
-      white-space: nowrap;
-    }
-
     .smalllink{
       font-size: 14px;
       font-weight: 600;
-      opacity: .95;
+      text-decoration: none;
     }
 
     .footer{
-      margin-top: 36px;
-      color: rgba(233,238,252,.70);
-      font-size: 13px;
+      margin-top: 40px;
       text-align: center;
-    }
-
-    /* Optional: quick “skills row” */
-    .skills{
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-top: 14px;
+      font-size: 13px;
+      color: rgba(233,238,252,.7);
     }
   </style>
 </head>
 
 <body>
   <div class="wrap">
+
+    <!-- HERO -->
     <header class="hero">
-      <div class="toprow">
+      <div class="heroRow">
+        <img src="images/profile.png" alt="Shine Aung" class="avatar">
+
         <div>
           <h1>Shine Aung</h1>
           <p class="subtitle">Mechanical Engineering Student • CAD / FEA / CFD</p>
@@ -207,46 +189,50 @@
           </div>
 
           <div class="cta">
-            <a class="btn primary" href="Shine_Resume.pdf" target="_blank" rel="noopener">Resume</a>
-            <a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="btn primary" href="Shine_Resume.pdf" target="_blank">Resume</a>
+            <a class="btn" href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
             <a class="btn" href="mailto:you@email.com">Email</a>
           </div>
         </div>
       </div>
     </header>
 
+    <!-- PROJECTS -->
     <section class="section">
       <h2>Projects</h2>
 
       <div class="grid">
-        <article class="card">
+        <div class="card">
           <h3>W257N Project</h3>
           <p>Mechanical design and analysis support for an industrial product configuration.</p>
-          <div class="tags">
+          <div class="skills">
             <span class="tag">SolidWorks</span>
             <span class="tag">FEA</span>
             <span class="tag">DFM</span>
           </div>
-          <a class="smalllink" href="#" onclick="alert('Next step: create a project page like projects/w257n.html'); return false;">View details →</a>
-        </article>
+          <a class="smalllink" href="projects/w257n.html">View details →</a>
+        </div>
 
-        <article class="card">
+        <div class="card">
           <h3>CFD Flow Study</h3>
           <p>Studied flow behavior, Reynolds number transition, and velocity profiles.</p>
-          <div class="tags">
+          <div class="skills">
             <span class="tag">ANSYS Fluent</span>
             <span class="tag">CFD</span>
           </div>
-          <a class="smalllink" href="#" onclick="alert('Next step: create a project page like projects/cfd.html'); return false;">View details →</a>
-        </article>
+          <a class="smalllink" href="projects/cfd.html">View details →</a>
+        </div>
       </div>
     </section>
 
-    <div class="footer">© <span id="y"></span> Shine Aung</div>
+    <div class="footer">
+      © <span id="year"></span> Shine Aung
+    </div>
+
   </div>
 
   <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
