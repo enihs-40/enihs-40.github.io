@@ -124,16 +124,22 @@
 
     /* FEATURED IMAGE */
     .featuredImage{
-      width: 70%;
-      max-width: 700px;
+      width: 100%;
       height: auto;
       border-radius: var(--radius);
       border: 1px solid var(--border);
       box-shadow: var(--shadow);
-      margin: 0 auto 24px;
+      margin-bottom: 24px;
       background: rgba(255,255,255,.02);
       padding: 20px;
       display: block;
+      cursor: pointer;
+      transition: transform .2s ease, border-color .2s ease;
+    }
+
+    .featuredImage:hover{
+      transform: translateY(-4px);
+      border-color: rgba(87,121,255,.4);
     }
 
     /* CONTENT SECTIONS */
@@ -249,12 +255,6 @@
       height: 220px;
       object-fit: cover;
       display: block;
-    }
-
-    .imageCaption{
-      padding: 14px 16px;
-      font-size: 13px;
-      color: var(--muted);
     }
 
     /* LIGHTBOX MODAL */
@@ -421,7 +421,7 @@
     </header>
 
     <!-- FEATURED IMAGE (Optional - remove if you don't have one) -->
-    <img src="../images/projects/knee-scooter-main1.jpg" alt="Knee Scooter Design" class="featuredImage">
+    <img src="../images/projects/knee-scooter-main1.png" alt="Knee Scooter Design" class="featuredImage" onclick="openLightbox(8)">
 
     <!-- OVERVIEW SECTION -->
     <section class="contentSection">
@@ -433,25 +433,6 @@
         Our team focused on creating an ergonomic, stable, and user-friendly design that could be manufactured cost-effectively while meeting all safety requirements for medical mobility devices.
       </p>
     </section>
-
-    <!-- KEY RESULTS -->
-    <div class="highlightBox">
-      <h3>Key Results</h3>
-      <div class="highlightGrid">
-        <div class="highlightItem">
-          <span class="highlightValue">50+</span>
-          <span class="highlightLabel">Components Modeled</span>
-        </div>
-        <div class="highlightItem">
-          <span class="highlightValue">15</span>
-          <span class="highlightLabel">Assembly Drawings</span>
-        </div>
-        <div class="highlightItem">
-          <span class="highlightValue">300 lbs</span>
-          <span class="highlightLabel">Weight Capacity</span>
-        </div>
-      </div>
-    </div>
 
     <!-- DESIGN PROCESS -->
     <section class="contentSection">
@@ -483,35 +464,27 @@
       <div class="imageGallery">
         <div class="galleryItem" onclick="openLightbox(0)">
           <img src="../images/projects/knee-scooter-1.jpg" alt="Full Assembly View">
-          <div class="imageCaption">Complete assembly with all components</div>
         </div>
         <div class="galleryItem" onclick="openLightbox(1)">
           <img src="../images/projects/knee-scooter-2.jpg" alt="Frame Detail">
-          <div class="imageCaption">Frame structure and welding details</div>
         </div>
         <div class="galleryItem" onclick="openLightbox(2)">
           <img src="../images/projects/knee-scooter-3.jpg" alt="Technical Drawing">
-          <div class="imageCaption">Engineering drawing with GD&T</div>
         </div>
         <div class="galleryItem" onclick="openLightbox(3)">
           <img src="../images/projects/knee-scooter-4.png" alt="Exploded View">
-          <div class="imageCaption">Exploded assembly view</div>
         </div>
         <div class="galleryItem" onclick="openLightbox(4)">
           <img src="../images/projects/knee-scooter-5.png" alt="CAD Model">
-          <div class="imageCaption">Detailed CAD model rendering</div>
         </div>
         <div class="galleryItem" onclick="openLightbox(5)">
           <img src="../images/projects/knee-scooter-6.png" alt="Assembly Instructions">
-          <div class="imageCaption">Assembly instructions and BOM</div>
         </div>
         <div class="galleryItem" onclick="openLightbox(6)">
           <img src="../images/projects/knee-scooter-7.png" alt="Component Details">
-          <div class="imageCaption">Individual component specifications</div>
         </div>
         <div class="galleryItem" onclick="openLightbox(7)">
           <img src="../images/projects/knee-scooter-8.png" alt="Final Design">
-          <div class="imageCaption">Final design with all features</div>
         </div>
       </div>
     </section>
@@ -560,7 +533,8 @@
       { src: '../images/projects/knee-scooter-5.png', caption: 'Detailed CAD model rendering' },
       { src: '../images/projects/knee-scooter-6.png', caption: 'Assembly instructions and BOM' },
       { src: '../images/projects/knee-scooter-7.png', caption: 'Individual component specifications' },
-      { src: '../images/projects/knee-scooter-8.png', caption: 'Final design with all features' }
+      { src: '../images/projects/knee-scooter-8.png', caption: 'Final design with all features' },
+      { src: '../images/projects/knee-scooter-main.png', caption: 'Knee Scooter - Main Assembly View' }
     ];
 
     let currentImageIndex = 0;
